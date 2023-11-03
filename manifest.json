@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "ひかるくん",
+    "version": "1.0.0",
+    "description": "Amazon CloudWatch Logs Insights 画面でタイムスタンプの増分が大きいログをより強くハイライトする",
+    "icons": {
+      "16": "penguin.png",
+      "48": "penguin.png",
+      "128": "penguin.png"
+    },
+    "action": {
+      "default_title": "時間がかかったログに色を付ける"
+    },
+    "permissions": ["activeTab", "scripting"],
+    "host_permissions": [
+      "https://ap-northeast-1.console.aws.amazon.com/cloudwatch/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    }
+  }
