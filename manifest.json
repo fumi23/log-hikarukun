@@ -1,15 +1,15 @@
 {
     "manifest_version": 3,
-    "name": "ひかるくん",
+    "name": "ログひかるくん",
     "version": "1.0.0",
-    "description": "Amazon CloudWatch Logs Insights 画面でタイムスタンプの増分が大きいログをより強くハイライトする",
+    "description": "Amazon CloudWatch Logs Insights 画面で遅いログをハイライトする",
     "icons": {
-      "16": "penguin.png",
-      "48": "penguin.png",
-      "128": "penguin.png"
+      "16": "flashlight.png",
+      "48": "flashlight.png",
+      "128": "flashlight.png"
     },
     "action": {
-      "default_title": "時間がかかったログに色を付ける"
+      "default_title": "ログひかるくん"
     },
     "permissions": ["activeTab", "scripting"],
     "host_permissions": [
