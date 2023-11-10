@@ -4,18 +4,18 @@
     "version": "1.0.0",
     "description": "Amazon CloudWatch Logs Insights 画面で遅いログをハイライトする",
     "icons": {
-      "16": "flashlight.png",
+      "128": "flashlight.png",
       "48": "flashlight.png",
-      "128": "flashlight.png"
+      "16": "flashlight.png"
     },
     "action": {
       "default_title": "ログひかるくん"
     },
-    "permissions": ["activeTab", "scripting"],
-    "host_permissions": [
-      "https://ap-northeast-1.console.aws.amazon.com/cloudwatch/*"
-    ],
     "background": {
       "service_worker": "background.js"
-    }
+    },
+    "permissions": ["scripting"],
+    "host_permissions": [
+      "https://ap-northeast-1.console.aws.amazon.com/cloudwatch/*"
+    ]
   }
