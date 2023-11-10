@@ -16,21 +16,21 @@ function colorizeTable() {
   for (const [element, delta] of generator()) {
     // deltaの値 [0, 1023] を対数スケールで [0, 1] に変換する
     const scaled = Math.log1p(delta) / Math.log(1024)
-    // セル要素の背景色とアドバイザリー情報を設定する
+    // セル要素をハイライトする（強弱は背景色のアルファ値で表現）
     element.style.backgroundColor = `hsla(50, 100%, 50%, ${scaled})`
     element.title = `${delta}ms (scale: ${scaled.toFixed(2)})`
   }
 }
 
 function main() {
+  // 表がある閲覧コンテキストでのみ処理を続行
+  const target = document.querySelector('tbody')
+  if (!target) return
   // DOM構築済みの表に色を付ける
   colorizeTable()
   // 表のDOM更新を監視し、変更を検知する都度再実行する
   const observer = new MutationObserver(() => { colorizeTable() })
-  const target = document.querySelector('tbody')
-  if (target) {
-    observer.observe(target, { subtree: true, childList: true })
-  }
+  observer.observe(target, { subtree: true, childList: true })
 }
 
-main() // 拡張機能アイコンをクリックすると実行される
+main() // 拡張機能アイコンをクリックすると各閲覧コンテキストで実行される
